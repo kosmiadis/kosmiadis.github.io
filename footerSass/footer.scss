@@ -1,0 +1,36 @@
+$a-color: black;
+
+footer {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(222, 217, 217);
+    position:fixed;
+    left: -140px;
+    top: 180px;
+    border-radius: 20px;
+    transition: transform 0.3s;
+
+    & a {
+        text-decoration: none;
+        font-family: 'Lato';
+        color: $a-color;
+        font-weight: 700;
+        
+        &:hover {
+            text-decoration-line: underline;
+        }
+        
+    }
+
+    & .fa-angle-right {
+        font-size: 1.5em; 
+    }
+}
+
+footer:hover {
+    transform: translateX(130px);
+}

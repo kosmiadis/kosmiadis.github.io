@@ -1,0 +1,207 @@
+$country-box-shadow-color: rgb(54, 51, 51);
+$inner-country-bg-color: #faf4f4;
+
+
+div.main-container {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    gap: 2rem;
+    align-items: center;
+
+    & * {
+        font-family: 'Lato';
+    }
+
+    & div.countries-container {
+        padding: 1em;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 2em;
+        align-items: center;
+        align-content: center;
+
+        & div.country {
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px $country-box-shadow-color;
+            padding: 1em;
+            width: 85%;
+            justify-self: center;
+            background-color: white;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            
+
+            & #inner-country {
+                font-family: 'Lato';
+                text-align: left;
+                border-radius: 10px;
+                padding: 3em 1em;
+                background-color: $inner-country-bg-color;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                gap: 1em;
+                overflow-x:hidden;
+                overflow-y: scroll;
+
+                & * {
+                    margin: 0;
+                }
+
+                & img {
+                    width: 100%;
+                    border-radius: 5px;
+                }
+
+                & .country-info {
+                    padding-top: 1em;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1em;
+                }
+                    & .name {
+                        font-size: 1.5em;
+                        font-weight: 700;
+                        align-self: center;
+                        text-align: center;
+                    }
+
+                    & .population {
+                        font-size: 1.2em;
+                        font-weight: 700;
+                        text-align: center;
+
+                        & span {
+                            font-weight: normal;
+                        }   
+                    }
+
+                    & .languages {
+                        font-weight: 700;
+                        text-align: center;
+                        font-size: 1.2em;
+                        align-self: center;
+
+                        & span {
+                            font-weight: normal;
+                        } 
+                    }
+            }   
+        }
+    }
+}
+
+
+@media screen and (min-width: 481px) {
+
+    #countries {
+        grid-template-columns: repeat(2,1fr);
+        
+        div.country {
+            
+            min-height: 550px;
+            max-height: 550px;
+        
+            & #inner-country {
+                min-height: 450px;
+                max-height: 450px;
+                overflow-y: hidden;
+                gap: 3em;
+
+                & .country-info {
+                    gap: 2em;
+                    justify-content: center;
+
+                    & .name {
+                        font-size: 1.5em;
+                    }
+
+                    & .population {
+                        text-align: center;
+                        font-size: 1.3em;
+                    }
+
+                    & .languages {
+                        
+                        font-size: 1.3em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    #countries {
+        grid-template-columns: repeat(3,1fr);
+
+        div.country {
+            max-height: 400px;
+            & #inner-country {
+                height: 450px;
+
+                & .country-info {
+
+                    & .name {
+                        font-size: 1.7em;
+                    }
+
+                    & .population {
+                        
+                        font-size: 1.4em;
+                    }
+
+                    & .languages {
+                        
+                        font-size: 1.4em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and ( min-width: 1201px) {
+
+    #countries {
+        grid-template-columns: repeat(4,1fr);
+        max-width: 1700px;
+        margin: 0 auto;
+
+        div.country {
+            max-height: 500px;
+
+            & #inner-country {
+                
+                gap: 4em;
+
+                & .name {
+                    font-size: 2em;
+                }
+
+                & .population {
+                    text-align: center;
+                    font-size: 1.5em;
+                }
+
+                & .languages {
+                    
+                    font-size: 1.5em;
+                }
+
+            }
+        }
+
+        
+        
+    }
+}
